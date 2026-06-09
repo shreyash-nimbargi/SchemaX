@@ -1,6 +1,4 @@
-DROP DATABASE IF EXISTS nl_to_sql_project;
-CREATE DATABASE nl_to_sql_project;
-USE nl_to_sql_project;
+USE defaultdb;
 
 CREATE TABLE departments (
     department_id INT AUTO_INCREMENT PRIMARY KEY,
