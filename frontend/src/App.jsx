@@ -17,7 +17,7 @@ function App() {
     setResponse(null)
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/generate-sql', {
+      const res = await fetch('https://schemax-backend.onrender.com/generate-sql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
