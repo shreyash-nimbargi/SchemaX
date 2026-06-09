@@ -12,13 +12,12 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://schemax.vercel.app"
+        "https://schema-x-teal.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 class QueryRequest(BaseModel):
     question: str
 
