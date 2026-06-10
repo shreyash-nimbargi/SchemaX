@@ -64,29 +64,29 @@ function App() {
             </p>
           </div>
           <div className="grid grid-cols-3 gap-2 text-center md:gap-3">
-            <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
-              <p className="text-lg font-bold">5</p>
-              <p className="text-xs text-slate-500">Tables</p>
+            <div className="rounded-lg border border-slate-200 bg-white px-2 py-2 shadow-sm sm:px-4 sm:py-3">
+              <p className="text-base font-bold sm:text-lg">5</p>
+              <p className="text-[10px] text-slate-500 sm:text-xs">Tables</p>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
-              <p className="text-lg font-bold">SELECT</p>
-              <p className="text-xs text-slate-500">Only</p>
+            <div className="rounded-lg border border-slate-200 bg-white px-2 py-2 shadow-sm sm:px-4 sm:py-3">
+              <p className="text-base font-bold sm:text-lg">SELECT</p>
+              <p className="text-[10px] text-slate-500 sm:text-xs">Only</p>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
-              <p className="text-lg font-bold">AI</p>
-              <p className="text-xs text-slate-500">Gemini</p>
+            <div className="rounded-lg border border-slate-200 bg-white px-2 py-2 shadow-sm sm:px-4 sm:py-3">
+              <p className="text-base font-bold sm:text-lg">AI</p>
+              <p className="text-[10px] text-slate-500 sm:text-xs">Gemini</p>
             </div>
           </div>
         </header>
 
         <main className="grid gap-6 lg:grid-cols-[420px_1fr]">
-          <section className="h-fit rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="mb-4 flex items-center justify-between">
+          <section className="h-fit rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+            <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-lg font-semibold">English Query</h2>
                 <p className="mt-1 text-sm text-slate-500">Type a database question.</p>
               </div>
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+              <span className="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
                 MySQL
               </span>
             </div>
@@ -121,7 +121,7 @@ function App() {
                   <button
                     key={sample}
                     onClick={() => setQuestion(sample)}
-                    className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700"
+                    className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700 active:bg-cyan-100"
                   >
                     {sample}
                   </button>
@@ -151,7 +151,7 @@ function App() {
             {response && (
               <>
                 <div className="grid gap-5 xl:grid-cols-[1fr_260px]">
-                  <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                  <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                     <div className="mb-3 flex items-center justify-between gap-3">
                       <h2 className="text-lg font-semibold">Generated SQL</h2>
                       <span
@@ -164,12 +164,12 @@ function App() {
                         {response.is_valid ? 'Valid' : 'Blocked'}
                       </span>
                     </div>
-                    <pre className="max-h-64 overflow-x-auto rounded-lg bg-slate-950 p-4 text-sm leading-6 text-cyan-100">
+                    <pre className="max-h-64 overflow-x-auto rounded-lg bg-slate-950 p-4 text-xs leading-6 text-cyan-100 sm:text-sm">
                       {response.generated_sql}
                     </pre>
                   </section>
 
-                  <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                  <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                     <h2 className="text-lg font-semibold">Validation</h2>
                     <p
                       className={`mt-3 rounded-lg border p-3 text-sm ${
@@ -187,7 +187,7 @@ function App() {
                   </section>
                 </div>
 
-                <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
                   <div className="flex flex-col gap-2 border-b border-slate-200 pb-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h2 className="text-lg font-semibold">Results Table</h2>
@@ -198,18 +198,18 @@ function App() {
                   </div>
 
                   {rows.length === 0 ? (
-                    <p className="mt-5 rounded-lg bg-slate-50 p-4 text-sm text-slate-600">
+                    <p className="mt-4 rounded-lg bg-slate-50 p-4 text-sm text-slate-600 sm:mt-5">
                       No results found.
                     </p>
                   ) : (
-                    <div className="mt-5 max-h-[520px] overflow-auto rounded-lg border border-slate-200">
+                    <div className="mt-4 max-h-[520px] overflow-auto rounded-lg border border-slate-200 sm:mt-5">
                       <table className="w-full min-w-max border-collapse text-left text-sm">
                         <thead className="sticky top-0 bg-slate-100">
                           <tr>
                             {columns.map((column) => (
                               <th
                                 key={column}
-                                className="border-b border-slate-200 px-4 py-3 font-semibold text-slate-700"
+                                className="border-b border-slate-200 px-4 py-3 font-semibold text-slate-700 whitespace-nowrap"
                               >
                                 {column}
                               </th>
