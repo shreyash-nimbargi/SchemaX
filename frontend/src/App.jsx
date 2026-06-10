@@ -57,22 +57,22 @@ function App() {
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-700">
               Natural Language to SQL
             </div>
-            <h1 className="text-4xl font-bold text-slate-950">SchemaX</h1>
+            <h1 className="text-3xl font-bold text-slate-950 sm:text-4xl">SchemaX</h1>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
               Ask questions in English, generate safe SELECT queries with Gemini,
               and view live MySQL results in one place.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm">
+          <div className="grid grid-cols-3 gap-2 text-center md:gap-3">
+            <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
               <p className="text-lg font-bold">5</p>
               <p className="text-xs text-slate-500">Tables</p>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
               <p className="text-lg font-bold">SELECT</p>
               <p className="text-xs text-slate-500">Only</p>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-3">
               <p className="text-lg font-bold">AI</p>
               <p className="text-xs text-slate-500">Gemini</p>
             </div>
@@ -95,7 +95,7 @@ function App() {
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Example: Show all employees whose salary is greater than 50000"
-              className="h-36 w-full resize-none rounded-lg border border-slate-300 bg-slate-50 p-4 text-sm leading-6 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100"
+              className="h-36 w-full resize-none rounded-lg border border-slate-300 bg-slate-50 p-4 text-base leading-6 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100 md:text-sm"
             />
 
             <button
